@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sahadat Hossain — Portfolio">
-  <title>Sahadat Hossain — Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sahadat Hossain Portfolio">
+<title>Sahadat Hossain — Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <a href="#home" class="logo">SH<span>.</span></a>
-
-  <button class="menu" type="button" aria-label="Open menu" aria-expanded="false">
+<header class="topbar">
+  <a class="logo" href="#home">SH<span>.</span></a>
+  <button class="menu" aria-label="Open navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#home" class="active">HOME</a>
+  <nav>
+    <a class="active" href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#experience">EXPERIENCE</a>
     <a href="#skills">SKILLS</a>
@@ -27,50 +25,15 @@
 </header>
 
 <main>
-  <!--
-    IMPORTANT:
-    Every SVG below is the original artwork supplied by you.
-    Nothing inside the SVG files is edited, cropped, stretched or redesigned.
-  -->
-
-  <section id="home" class="page first">
-    <div class="art">
-      <img src="assets/project-1.svg" alt="Home">
-    </div>
-    <a class="scroll" href="#about">SCROLL <span>↓</span></a>
-  </section>
-
-  <section id="about" class="page">
-    <div class="art"><img src="assets/project-2.svg" alt="About"></div>
-  </section>
-
-  <section id="experience" class="page">
-    <div class="art"><img src="assets/project-3.svg" alt="Experience"></div>
-  </section>
-
-  <section id="skills" class="page">
-    <div class="art"><img src="assets/project-4.svg" alt="Skills"></div>
-  </section>
-
-  <section id="work" class="page">
-    <div class="art"><img src="assets/project-5.svg" alt="Sample Work"></div>
-  </section>
-
-  <section id="contact" class="page last">
-    <div class="art"><img src="assets/project-6.svg" alt="Contact"></div>
-
-    <!--
-      SOCIAL MEDIA LINKS — add your URLs here later if you want:
-      <a href="YOUR_FACEBOOK_URL">Facebook</a>
-      <a href="YOUR_LINKEDIN_URL">LinkedIn</a>
-      <a href="YOUR_INSTAGRAM_URL">Instagram</a>
-      <a href="YOUR_BEHANCE_URL">Behance</a>
-    -->
-  </section>
+  <section id="home" class="page"><img src="assets/home.png" alt="Home"></section>
+  <section id="about" class="page"><img src="assets/about.png" alt="About Me"></section>
+  <section id="experience" class="page"><img src="assets/experience.png" alt="Experience and Education"></section>
+  <section id="skills" class="page"><img src="assets/skills.png" alt="Skills and Proficiencies"></section>
+  <section id="work" class="page"><img src="assets/work.png" alt="Sample Work"></section>
+  <section id="contact" class="page"><img src="assets/contact.png" alt="Reach out"></section>
 </main>
 
-<div class="progress" aria-hidden="true"><span></span></div>
-
+<div class="progress"><span></span></div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,30 +1,32 @@
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  background:#f7f4ee;
+html{scroll-behavior:smooth;background:#111}
+body{margin:0;background:#111;overflow-x:hidden}
+.page{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  background:#111;
+  scroll-margin-top:0;
 }
-
-body{
-  margin:0;
-  overflow-x:hidden;
-  background:#f7f4ee;
-  color:#111;
-  font-family:Arial,Helvetica,sans-serif;
+.page img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:1366px;
+  aspect-ratio:1366/768;
+  object-fit:contain;
+  flex:none;
+  user-select:none;
+  -webkit-user-drag:none;
 }
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* Fixed navigation */
-.header{
+.topbar{
   position:fixed;
   z-index:1000;
-  top:0;
-  left:0;
-  right:0;
+  top:0;left:0;right:0;
   height:70px;
   display:flex;
   align-items:center;
@@ -35,231 +37,63 @@ a{
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
 }
-
 .logo{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:28px;
-  line-height:1;
-  font-weight:700;
+  color:#111;
+  text-decoration:none;
+  font:700 28px Georgia,"Times New Roman",serif;
   letter-spacing:-1.5px;
 }
-
 .logo span{color:#2115b8}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-.nav a{
+nav{display:flex;gap:28px;align-items:center}
+nav a{
   position:relative;
-  padding:10px 0;
-  font-size:11px;
-  line-height:1;
-  font-weight:800;
+  color:#111;
+  text-decoration:none;
+  font:800 11px Arial,Helvetica,sans-serif;
   letter-spacing:.13em;
+  padding:10px 0;
 }
-
-.nav a::after{
+nav a:after{
   content:"";
   position:absolute;
-  left:0;
-  right:0;
-  bottom:3px;
-  height:2px;
+  left:0;right:0;bottom:3px;height:2px;
   background:#2115b8;
   transform:scaleX(0);
   transform-origin:left;
-  transition:transform .25s ease;
+  transition:.25s;
 }
-
-.nav a:hover::after,
-.nav a.active::after{
-  transform:scaleX(1);
-}
-
-/*
-  THE IMPORTANT FIX:
-  The supplied SVGs are 1366 x 768 (16:9).
-  We keep that exact ratio and NEVER force the image to fill the viewport height.
-*/
-.page{
-  position:relative;
-  width:100%;
-  min-height:calc(100vh - 70px);
-  padding-top:70px;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  background:#f7f4ee;
-}
-
-.page:nth-child(even){
-  background:#fff;
-}
-
-.art{
-  width:min(1366px, calc(100vw - 40px));
-  aspect-ratio:1366 / 768;
-  flex:0 0 auto;
-  margin:14px auto 28px;
-  display:block;
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
-}
-
-.art img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  margin:0;
-  padding:0;
-  border:0;
-  user-select:none;
-  -webkit-user-drag:none;
-}
-
-.page.visible .art{
-  opacity:1;
-  transform:none;
-}
-
-/* Keep the scroll control outside the SVG artwork */
-.scroll{
-  position:absolute;
-  left:50%;
-  bottom:20px;
-  z-index:5;
-  transform:translateX(-50%);
-  padding:13px 18px;
-  background:rgba(255,255,255,.9);
-  border:1px solid rgba(0,0,0,.1);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.18em;
-  transition:background .25s ease,color .25s ease,transform .25s ease;
-}
-
-.scroll span{
-  margin-left:7px;
-  font-size:16px;
-}
-
-.scroll:hover{
-  color:#fff;
-  background:#2115b8;
-  transform:translateX(-50%) translateY(-3px);
-}
-
-/* Small progress line */
+nav a:hover:after,nav a.active:after{transform:scaleX(1)}
+.menu{display:none;border:0;background:transparent;width:40px;padding:4px}
+.menu span{display:block;height:2px;background:#111;margin:6px 0}
 .progress{
-  position:fixed;
-  z-index:1100;
-  right:8px;
-  top:50%;
-  width:3px;
-  height:110px;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,.12);
-  border-radius:4px;
+  position:fixed;z-index:1100;right:8px;top:50%;
+  width:3px;height:110px;transform:translateY(-50%);
+  background:rgba(0,0,0,.16);border-radius:4px;
 }
+.progress span{display:block;width:100%;height:0;background:#2115b8;border-radius:4px}
 
-.progress span{
-  display:block;
-  width:100%;
-  height:0;
-  background:#2115b8;
-  border-radius:4px;
-}
-
-/* Mobile menu */
-.menu{
-  display:none;
-  width:40px;
-  padding:4px;
-  border:0;
-  background:transparent;
-  cursor:pointer;
-}
-
-.menu span{
-  display:block;
-  height:2px;
-  margin:6px 0;
-  background:#111;
-}
-
-/* Tablet / mobile */
 @media(max-width:800px){
-  .header{
-    height:62px;
-    padding:0 18px;
-  }
-
+  .topbar{height:62px;padding:0 18px}
   .logo{font-size:25px}
-
   .menu{display:block}
-
-  .nav{
+  nav{
     display:none;
-    position:absolute;
-    top:68px;
-    right:12px;
-    width:210px;
-    padding:8px;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
+    position:absolute;right:12px;top:68px;width:210px;
+    padding:8px;flex-direction:column;align-items:stretch;gap:0;
     background:rgba(247,244,238,.98);
     box-shadow:0 18px 40px rgba(0,0,0,.15);
   }
-
-  .nav.open{display:flex}
-
-  .nav a{
-    padding:14px 11px;
-  }
-
+  nav.open{display:flex}
+  nav a{padding:14px 11px}
   .page{
     min-height:0;
+    align-items:flex-start;
     padding-top:62px;
   }
-
-  .art{
-    width:calc(100vw - 20px);
-    margin:10px auto 24px;
-  }
-
-  .scroll{
-    bottom:12px;
-    padding:10px 13px;
-    font-size:9px;
-  }
-
-  .progress{
-    right:4px;
-    height:75px;
-  }
-}
-
-/* Very small phones: still preserve the SVG's 16:9 ratio */
-@media(max-width:480px){
-  .art{
+  .page img{
     width:100vw;
-    margin:8px 0 22px;
+    max-width:none;
+    height:auto;
   }
-}
-
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-
-  .art{
-    opacity:1;
-    transform:none;
-    transition:none;
-  }
+  .progress{right:4px;height:75px}
 }

@@ -1,38 +1,29 @@
-# Sahadat Hossain Portfolio — Exact SVG Version
+# Sahadat Hossain Portfolio — PNG Exact Version
 
-This version is specifically built to preserve the supplied SVG artwork.
+This version uses the six supplied 1366×768 PNG artworks directly.
 
-## What is preserved
-
-- All 6 original SVG files are included unchanged.
-- The SVG aspect ratio is preserved at 1366 × 768 (16:9).
-- The artwork is never stretched to the browser's height.
-- The artwork is never cropped.
-- No text, image, or design inside the SVGs is changed.
-- Only the website navigation, smooth scrolling, section reveal, and progress indicator are added.
+The artwork itself is not recreated in HTML/CSS. Each PNG is shown as one complete 16:9 page image, so the text, colors, illustrations, backgrounds, icons, and layout remain exactly as supplied.
 
 ## Files
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `.nojekyll`
-- `assets/project-1.svg`
-- `assets/project-2.svg`
-- `assets/project-3.svg`
-- `assets/project-4.svg`
-- `assets/project-5.svg`
-- `assets/project-6.svg`
+- index.html
+- style.css
+- script.js
+- .nojekyll
+- assets/home.png
+- assets/about.png
+- assets/experience.png
+- assets/skills.png
+- assets/work.png
+- assets/contact.png
 
 ## GitHub Pages
 
-Upload the files and the `assets` folder to the repository root.
+Upload the contents of this folder to the repository root, keeping `assets` beside `index.html`.
 
-Then:
+Then go to:
+Settings → Pages → Deploy from a branch → main → /(root) → Save.
 
-GitHub → Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
+The navigation and progress bar are website overlays. The six portfolio artworks themselves are the original PNG files.
 
-## Social media
-
-Social-media link examples are left as HTML comments in `index.html`.
-Add your real URLs there later.
+Social media URLs can be added later in `index.html` if you want to replace the navigation/overlay behavior with your own links.

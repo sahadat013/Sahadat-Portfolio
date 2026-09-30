@@ -1,44 +1,32 @@
 const pages=[...document.querySelectorAll('.page')];
-const nav=document.querySelector('.nav');
+const links=[...document.querySelectorAll('nav a')];
+const nav=document.querySelector('nav');
 const menu=document.querySelector('.menu');
 const progress=document.querySelector('.progress span');
 
-const observer=new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-
       const id=entry.target.id;
-      document.querySelectorAll('.nav a').forEach(link=>{
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === '#' + id
-        );
-      });
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
     }
   });
-},{threshold:.35});
-
-pages.forEach(page=>observer.observe(page));
+},{threshold:.45});
+pages.forEach(p=>observer.observe(p));
 
 menu.addEventListener('click',()=>{
   const open=nav.classList.toggle('open');
   menu.setAttribute('aria-expanded',String(open));
 });
+links.forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded','false');
+}));
 
-document.querySelectorAll('.nav a').forEach(link=>{
-  link.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  });
-});
-
-function updateProgress(){
-  const max=document.documentElement.scrollHeight-window.innerHeight;
-  const value=max>0 ? (window.scrollY/max)*100 : 0;
-  progress.style.height=value+'%';
+function progressBar(){
+  const max=document.documentElement.scrollHeight-innerHeight;
+  progress.style.height=(max>0?(scrollY/max)*100:0)+'%';
 }
-
-window.addEventListener('scroll',updateProgress,{passive:true});
-window.addEventListener('resize',updateProgress);
-updateProgress();
+addEventListener('scroll',progressBar,{passive:true});
+addEventListener('resize',progressBar);
+progressBar();
