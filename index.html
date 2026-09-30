@@ -1,64 +1,80 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Sahadat Hossain — Virtual Assistant, Lead Generation Specialist and Logo Designer.">
-<title>Sahadat Hossain — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sahadat Hossain — Portfolio">
+  <title>Sahadat Hossain — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home" aria-label="Sahadat Hossain home">SH<span>.</span></a>
-  <nav id="nav" aria-label="Main navigation">
-    <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a>
-  </nav>
-  <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false"><i></i><i></i><i></i></button>
-</header>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Sahadat Hossain home">SH<span>.</span></a>
 
-<main>
-  <section id="home" class="page home-page is-visible">
-    <div class="page-label">01 / HOME</div>
-    <div class="art home-art"><img src="assets/project-1.svg" alt="Sahadat Hossain portfolio introduction"></div>
-    <a class="scroll-cue" href="#about">Scroll <b>↓</b></a>
-  </section>
+    <button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-  <section id="about" class="page about-page">
-    <div class="page-label">02 / ABOUT</div>
-    <div class="art about-art"><img src="assets/project-2.svg" alt="About Sahadat Hossain"></div>
-    <div class="side-note">ABOUT / PROFILE</div>
-  </section>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <section id="experience" class="page experience-page">
-    <div class="page-label">03 / EXPERIENCE</div>
-    <div class="art experience-art"><img src="assets/project-3.svg" alt="Experience and education"></div>
-    <div class="year-mark">2022 — 2020</div>
-  </section>
+  <main>
+    <section id="home" class="art-section first">
+      <div class="art-stage">
+        <img src="assets/project-1.svg" alt="Sahadat Hossain portfolio home artwork" loading="eager">
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About">SCROLL <span>↓</span></a>
+    </section>
 
-  <section id="skills" class="page skills-page">
-    <div class="page-label">04 / SKILLS</div>
-    <div class="art skills-art"><img src="assets/project-4.svg" alt="Skills and proficiencies"></div>
-    <div class="skill-orbit" aria-hidden="true"></div>
-  </section>
+    <section id="about" class="art-section">
+      <div class="art-stage">
+        <img src="assets/project-2.svg" alt="About portfolio artwork" loading="lazy">
+      </div>
+    </section>
 
-  <section id="work" class="page work-page">
-    <div class="page-label">05 / SAMPLE WORK</div>
-    <div class="art work-art"><img src="assets/project-5.svg" alt="Sample work portfolio"></div>
-    <div class="work-caption">SELECTED WORK</div>
-  </section>
+    <section id="experience" class="art-section">
+      <div class="art-stage">
+        <img src="assets/project-3.svg" alt="Experience and education portfolio artwork" loading="lazy">
+      </div>
+    </section>
 
-  <section id="contact" class="page contact-page">
-    <div class="page-label">06 / CONTACT</div>
-    <div class="art contact-art"><img src="assets/project-6.svg" alt="Contact Sahadat Hossain"></div>
-    <a class="back-top" href="#home">Back to top ↑</a>
-  </section>
-</main>
+    <section id="skills" class="art-section">
+      <div class="art-stage">
+        <img src="assets/project-4.svg" alt="Skills and proficiencies portfolio artwork" loading="lazy">
+      </div>
+    </section>
 
-<div class="progress"><span></span></div>
-<div class="cursor-glow" aria-hidden="true"></div>
-<script src="script.js"></script>
+    <section id="work" class="art-section">
+      <div class="art-stage">
+        <img src="assets/project-5.svg" alt="Sample work portfolio artwork" loading="lazy">
+      </div>
+    </section>
+
+    <section id="contact" class="art-section last">
+      <div class="art-stage">
+        <img src="assets/project-6.svg" alt="Contact portfolio artwork" loading="lazy">
+      </div>
+
+      <!-- Add your real social links later by replacing the # values below. -->
+      <div class="social-links" aria-label="Social media links">
+        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Behance</a>
+      </div>
+
+      <a class="top-cue" href="#home">BACK TO TOP ↑</a>
+    </section>
+  </main>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <script src="script.js"></script>
 </body>
 </html>

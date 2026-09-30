@@ -1,25 +1,36 @@
-# Sahadat Hossain — Portfolio
+# Sahadat Hossain Portfolio — Final
 
-A GitHub Pages-ready portfolio built around the six supplied SVG portfolio artworks.
+This package keeps the six supplied SVG artworks as the actual visual artwork.
+The SVG files are copied without editing their artwork/content.
 
-## Sections
-1. Home — `assets/project-1.svg`
-2. About — `assets/project-2.svg`
-3. Experience — `assets/project-3.svg`
-4. Skills — `assets/project-4.svg`
-5. Sample Work — `assets/project-5.svg`
-6. Contact — `assets/project-6.svg`
-
-## Upload to GitHub
-Keep this structure exactly:
+## Structure
 
 - `index.html`
 - `style.css`
 - `script.js`
-- `README.md`
-- `assets/`
-  - `project-1.svg` … `project-6.svg`
+- `.nojekyll`
+- `assets/project-1.svg` through `project-6.svg`
 
-In GitHub: **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
+## GitHub Pages
 
-No build step is required.
+1. Upload all files to the repository root.
+2. Keep the `assets` folder beside `index.html`.
+3. GitHub → Settings → Pages.
+4. Select **Deploy from a branch**.
+5. Select `main` and `/(root)`.
+6. Save and wait for deployment.
+
+## Social links
+
+The contact section contains placeholder links for:
+- Facebook
+- LinkedIn
+- Instagram
+- Behance
+
+Replace each `href="#"` in `index.html` with your real URL later.
+
+## Important
+
+The SVG artworks are not converted into PNG/JPG and are not redesigned.
+They are displayed with `object-fit: contain` so the complete SVG artwork remains visible without cropping.
