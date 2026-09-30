@@ -1,5 +1,6 @@
-const sections=[...document.querySelectorAll('.svg-section')];
-const nav=document.querySelector('nav');
+const pages=[...document.querySelectorAll('.page')];
+const links=[...document.querySelectorAll('nav a')];
+const nav=document.getElementById('nav');
 const menu=document.querySelector('.menu');
 const progress=document.querySelector('.progress span');
 
@@ -7,33 +8,30 @@ const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('in-view');
-      const id=entry.target.id;
-      document.querySelectorAll('nav a').forEach(a=>{
-        a.classList.toggle('active',a.getAttribute('href')==='#'+id);
-      });
+      links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id));
     }
   });
-},{threshold:.35});
-sections.forEach(s=>observer.observe(s));
+},{threshold:.55});
+pages.forEach(p=>observer.observe(p));
 
-menu.addEventListener('click',()=>{
-  const open=nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded',open);
-});
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{
   nav.classList.remove('open');
   menu.setAttribute('aria-expanded','false');
 }));
+menu.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded',String(open));
+});
 
 function updateProgress(){
-  const max=document.documentElement.scrollHeight-window.innerHeight;
-  progress.style.height=(max>0 ? (scrollY/max)*100 : 0)+'%';
+  const max=document.documentElement.scrollHeight-innerHeight;
+  progress.style.height=(max>0?(scrollY/max)*100:0)+'%';
 }
-window.addEventListener('scroll',updateProgress,{passive:true});
-updateProgress();
+addEventListener('scroll',updateProgress,{passive:true});
+addEventListener('resize',updateProgress);updateProgress();
 
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  window.addEventListener('pointermove',e=>{
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('pointermove',e=>{
     document.documentElement.style.setProperty('--mx',e.clientX+'px');
     document.documentElement.style.setProperty('--my',e.clientY+'px');
   },{passive:true});
