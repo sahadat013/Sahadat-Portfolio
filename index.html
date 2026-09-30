@@ -1,80 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sahadat Hossain — Portfolio">
   <title>Sahadat Hossain — Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Sahadat Hossain home">SH<span>.</span></a>
 
-    <button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<header class="header">
+  <a href="#home" class="logo">SH<span>.</span></a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <button class="menu" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 
-  <main>
-    <section id="home" class="art-section first">
-      <div class="art-stage">
-        <img src="assets/project-1.svg" alt="Sahadat Hossain portfolio home artwork" loading="eager">
-      </div>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to About">SCROLL <span>↓</span></a>
-    </section>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home" class="active">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#work">WORK</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
 
-    <section id="about" class="art-section">
-      <div class="art-stage">
-        <img src="assets/project-2.svg" alt="About portfolio artwork" loading="lazy">
-      </div>
-    </section>
+<main>
+  <!--
+    IMPORTANT:
+    Every SVG below is the original artwork supplied by you.
+    Nothing inside the SVG files is edited, cropped, stretched or redesigned.
+  -->
 
-    <section id="experience" class="art-section">
-      <div class="art-stage">
-        <img src="assets/project-3.svg" alt="Experience and education portfolio artwork" loading="lazy">
-      </div>
-    </section>
+  <section id="home" class="page first">
+    <div class="art">
+      <img src="assets/project-1.svg" alt="Home">
+    </div>
+    <a class="scroll" href="#about">SCROLL <span>↓</span></a>
+  </section>
 
-    <section id="skills" class="art-section">
-      <div class="art-stage">
-        <img src="assets/project-4.svg" alt="Skills and proficiencies portfolio artwork" loading="lazy">
-      </div>
-    </section>
+  <section id="about" class="page">
+    <div class="art"><img src="assets/project-2.svg" alt="About"></div>
+  </section>
 
-    <section id="work" class="art-section">
-      <div class="art-stage">
-        <img src="assets/project-5.svg" alt="Sample work portfolio artwork" loading="lazy">
-      </div>
-    </section>
+  <section id="experience" class="page">
+    <div class="art"><img src="assets/project-3.svg" alt="Experience"></div>
+  </section>
 
-    <section id="contact" class="art-section last">
-      <div class="art-stage">
-        <img src="assets/project-6.svg" alt="Contact portfolio artwork" loading="lazy">
-      </div>
+  <section id="skills" class="page">
+    <div class="art"><img src="assets/project-4.svg" alt="Skills"></div>
+  </section>
 
-      <!-- Add your real social links later by replacing the # values below. -->
-      <div class="social-links" aria-label="Social media links">
-        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Behance</a>
-      </div>
+  <section id="work" class="page">
+    <div class="art"><img src="assets/project-5.svg" alt="Sample Work"></div>
+  </section>
 
-      <a class="top-cue" href="#home">BACK TO TOP ↑</a>
-    </section>
-  </main>
+  <section id="contact" class="page last">
+    <div class="art"><img src="assets/project-6.svg" alt="Contact"></div>
 
-  <div class="progress" aria-hidden="true"><span></span></div>
-  <script src="script.js"></script>
+    <!--
+      SOCIAL MEDIA LINKS — add your URLs here later if you want:
+      <a href="YOUR_FACEBOOK_URL">Facebook</a>
+      <a href="YOUR_LINKEDIN_URL">LinkedIn</a>
+      <a href="YOUR_INSTAGRAM_URL">Instagram</a>
+      <a href="YOUR_BEHANCE_URL">Behance</a>
+    -->
+  </section>
+</main>
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<script src="script.js"></script>
 </body>
 </html>

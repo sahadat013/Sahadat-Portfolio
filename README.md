@@ -1,36 +1,38 @@
-# Sahadat Hossain Portfolio — Final
+# Sahadat Hossain Portfolio — Exact SVG Version
 
-This package keeps the six supplied SVG artworks as the actual visual artwork.
-The SVG files are copied without editing their artwork/content.
+This version is specifically built to preserve the supplied SVG artwork.
 
-## Structure
+## What is preserved
+
+- All 6 original SVG files are included unchanged.
+- The SVG aspect ratio is preserved at 1366 × 768 (16:9).
+- The artwork is never stretched to the browser's height.
+- The artwork is never cropped.
+- No text, image, or design inside the SVGs is changed.
+- Only the website navigation, smooth scrolling, section reveal, and progress indicator are added.
+
+## Files
 
 - `index.html`
 - `style.css`
 - `script.js`
 - `.nojekyll`
-- `assets/project-1.svg` through `project-6.svg`
+- `assets/project-1.svg`
+- `assets/project-2.svg`
+- `assets/project-3.svg`
+- `assets/project-4.svg`
+- `assets/project-5.svg`
+- `assets/project-6.svg`
 
 ## GitHub Pages
 
-1. Upload all files to the repository root.
-2. Keep the `assets` folder beside `index.html`.
-3. GitHub → Settings → Pages.
-4. Select **Deploy from a branch**.
-5. Select `main` and `/(root)`.
-6. Save and wait for deployment.
+Upload the files and the `assets` folder to the repository root.
 
-## Social links
+Then:
 
-The contact section contains placeholder links for:
-- Facebook
-- LinkedIn
-- Instagram
-- Behance
+GitHub → Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
 
-Replace each `href="#"` in `index.html` with your real URL later.
+## Social media
 
-## Important
-
-The SVG artworks are not converted into PNG/JPG and are not redesigned.
-They are displayed with `object-fit: contain` so the complete SVG artwork remains visible without cropping.
+Social-media link examples are left as HTML comments in `index.html`.
+Add your real URLs there later.
